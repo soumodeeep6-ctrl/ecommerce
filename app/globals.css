@@ -215,3 +215,6 @@ textarea.admin-input {
 .latest-products-swiper .swiper-pagination-bullet-active {
   background: #e96546;
 }
+
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }

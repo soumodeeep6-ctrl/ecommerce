@@ -63,13 +63,13 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-[#fbf8f2]/95 backdrop-blur border-b border-[#dfd7ca]">
-      <div className="max-w-7xl mx-auto px-5 lg:px-8 py-5 flex items-center justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-8 py-3.5 sm:py-5 flex items-center justify-between gap-3 sm:gap-8">
         <Link href="/" className="flex items-center gap-3 group shrink-0">
-          <div className="bg-[#e96546] p-2.5 rounded-full group-hover:rotate-6 transition duration-300">
-            <FaShopify className="text-2xl text-white" />
+          <div className="bg-[#e96546] p-2 sm:p-2.5 rounded-full group-hover:rotate-6 transition duration-300">
+            <FaShopify className="text-xl sm:text-2xl text-white" />
           </div>
 
-          <h1 className="display-type text-3xl font-bold text-[#2d2924]">
+          <h1 className="display-type text-2xl sm:text-3xl font-bold text-[#2d2924]">
             shopper<span className="text-[#e96546]">.</span>
           </h1>
         </Link>
@@ -87,7 +87,7 @@ const Navbar = () => {
           />
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 sm:gap-6">
           <Link href="/about" className="hidden md:block text-sm font-semibold text-[#5e574e] hover:text-[#e96546]">About</Link>
           <Link href="/contact" className="hidden md:block text-sm font-semibold text-[#5e574e] hover:text-[#e96546]">Contact</Link>
 
@@ -104,16 +104,16 @@ const Navbar = () => {
 
           <Link
             href="/login"
-             className="bg-[#2d2924] hover:bg-[#e96546] text-white px-5 py-2.5 rounded-full text-sm font-semibold transition duration-300"
+             className="bg-[#2d2924] hover:bg-[#e96546] text-white px-3 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition duration-300"
           >
-            Log In / Sign Up
+            <span className="sm:hidden">Sign in</span><span className="hidden sm:inline">Log In / Sign Up</span>
           </Link>
         </div>
       </div>
 
       <div className="bg-[#f1ece3] border-t border-[#dfd7ca]">
-        <div className="max-w-7xl mx-auto px-6">
-          <ul className="flex justify-center items-center gap-10 py-3 overflow-x-auto whitespace-nowrap">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <ul className="flex justify-start sm:justify-center items-center gap-7 sm:gap-10 py-3 overflow-x-auto whitespace-nowrap scrollbar-none">
             {categories.map((category) => (
               <li key={category.id}>
                 <Link

@@ -1,12 +1,13 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import AdminSidebar from "../components/AdminSidebar";
+import { API_URL } from "@/lib/api";
 
 export default async function AdminLayout({ children }) {
   const token = (await cookies()).get("token")?.value;
   if (!token) redirect("/login");
 
-  const profileResponse = await fetch("https://api.escuelajs.co/api/v1/auth/profile", {
+  const profileResponse = await fetch(`${API_URL}/auth/profile`, {
     headers: { Authorization: `Bearer ${token}` },
     cache: "no-store",
   });

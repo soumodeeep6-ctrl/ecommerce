@@ -55,41 +55,41 @@ export default function Hero() {
         disableOnInteraction: false,
       }}
       loop
-      className="h-[550px] lg:h-[620px]"
+      className="h-[540px] sm:h-[550px] lg:h-[620px]"
     >
       {slides.map((slide) => (
         <SwiperSlide key={slide.id}>
           <div
-            className="relative h-[550px] lg:h-[620px] bg-cover bg-center"
+            className="relative h-[540px] sm:h-[550px] lg:h-[620px] bg-cover bg-center"
             style={{
               backgroundImage: `url(${slide.image})`,
             }}
           >
             <div className="absolute inset-0 bg-[#201b18]/55"></div>
 
-            <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center px-6">
+            <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center px-5 sm:px-6">
               <div className="max-w-2xl text-white">
                 <span className="eyebrow text-[#ffd3c6]">
                   The new everyday edit
                 </span>
 
-                <h1 className="display-type text-5xl md:text-7xl font-bold mt-5 leading-[.98]">{slide.title}</h1>
+                <h1 className="display-type text-4xl sm:text-5xl md:text-7xl font-bold mt-5 leading-[.98]">{slide.title}</h1>
 
                 <p className="mt-6 text-lg md:text-xl text-white/80 max-w-xl leading-relaxed">
                   {slide.description}
                 </p>
 
-                <div className="mt-9 flex flex-wrap gap-4">
+                <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
                   <button
                     onClick={() => router.push("/login")}
-                    className="bg-[#e96546] hover:bg-[#f27d61] px-7 py-3.5 rounded-full font-semibold"
+                    className="bg-[#e96546] hover:bg-[#f27d61] px-6 py-3.5 rounded-full font-semibold text-sm sm:text-base"
                   >
                     {slide.button1}
                   </button>
 
                   <button
                     onClick={() => router.push("/product")}
-                    className="border border-white/70 px-7 py-3.5 rounded-full hover:bg-white hover:text-[#2d2924] transition"
+                    className="border border-white/70 px-6 py-3.5 rounded-full hover:bg-white hover:text-[#2d2924] transition text-sm sm:text-base"
                   >
                     {slide.button2}
                   </button>

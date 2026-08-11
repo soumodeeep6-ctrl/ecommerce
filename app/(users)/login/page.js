@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { Eye, EyeOff, ArrowRight, CheckCircle2, AlertCircle, LoaderCircle, KeyRound } from "lucide-react";
 
-const API_URL = "https://api.escuelajs.co/api/v1";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.escuelajs.co/api/v1";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -42,7 +42,12 @@ export default function LoginPage() {
       if (!response.ok) throw new Error(data.message || "Email or password is incorrect.");
       localStorage.setItem("access_token", data.access_token);
       localStorage.setItem("refresh_token", data.refresh_token);
-      Cookies.set("token", data.access_token);
+      Cookies.set("token", data.access_token, {
+        expires: 20,
+        secure: window.location.protocol === "https:",
+        sameSite: "lax",
+        path: "/",
+      });
       const profileResponse = await fetch(`${API_URL}/auth/profile`, { headers: { Authorization: `Bearer ${data.access_token}` } });
       const profile = await profileResponse.json();
       localStorage.setItem("user", JSON.stringify(profile));
