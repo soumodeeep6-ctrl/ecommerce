@@ -23,7 +23,10 @@ const Footer = () => (
         </div>
       </div>
       <hr className="border-white/10 my-10" />
-      <p className="text-[#8f867c] text-sm">© {new Date().getFullYear()} Shopper. All Rights Reserved.</p>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
+        <p className="text-[#8f867c]">© {new Date().getFullYear()} Shopper. All Rights Reserved.</p>
+        <p className="text-[#aaa095]">Designed &amp; built by <span className="text-[#f7a18d] font-semibold">Soumodeep Sarkar</span></p>
+      </div>
     </div>
   </footer>
 );
