@@ -205,6 +205,28 @@ textarea.admin-input {
 }
 .admin-input::placeholder { color: #a29a90; opacity: 1; }
 
+.admin-profile-popover {
+  box-sizing: border-box;
+  width: min(20rem, calc(100vw - 2rem));
+  max-width: calc(100vw - 2rem);
+}
+
+@media (max-width: 639px) {
+  .admin-profile-popover {
+    position: fixed;
+    top: auto;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: calc(4.5rem + env(safe-area-inset-bottom));
+    width: calc(100vw - 1.5rem);
+    max-width: 20rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
 .latest-products-swiper .swiper-pagination {
   position: relative !important;
   inset: auto !important;
