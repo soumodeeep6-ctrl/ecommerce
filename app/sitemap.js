@@ -1,7 +1,8 @@
 import { API_URL } from "@/lib/api";
+import { getSiteUrl } from "@/lib/site";
 
 export default async function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const baseUrl = getSiteUrl();
   const routes = ["", "/about", "/contact", "/product", "/category"];
   let productRoutes = [];
   let categoryRoutes = [];

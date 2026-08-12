@@ -1,9 +1,10 @@
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
+import { getSiteUrl } from "@/lib/site";
 
 
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: "Shopper India | Everyday products, thoughtfully chosen",
     template: "%s | Shopper India",
@@ -35,8 +36,8 @@ export default function RootLayout({ children }) {
               __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@graph": [
-                  { "@type": "WebSite", "name": "Shopper India", "url": process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000", "description": "A modern online store for thoughtfully chosen products." },
-                  { "@type": "Organization", "name": "Shopper India", "url": process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000", "founder": { "@type": "Person", "name": "Soumodeep Sarkar" }, "address": { "@type": "PostalAddress", "addressCountry": "IN", "addressLocality": "Kolkata" } },
+                  { "@type": "WebSite", "name": "Shopper India", "url": getSiteUrl(), "description": "A modern online store for thoughtfully chosen products." },
+                  { "@type": "Organization", "name": "Shopper India", "url": getSiteUrl(), "founder": { "@type": "Person", "name": "Soumodeep Sarkar" }, "address": { "@type": "PostalAddress", "addressCountry": "IN", "addressLocality": "Kolkata" } },
                 ],
               }),
             }}

@@ -25,20 +25,24 @@ export default function AdminProfile() {
     else if (savedAvatar) setProfile((current) => ({ ...current, avatar: savedAvatar }));
   }, []);
 
-  function uploadAvatar(event) {
+  async function uploadAvatar(event) {
     const file = event.target.files?.[0];
     if (!file) return;
-    if (!file.type.startsWith("image/")) return;
-    if (file.size > 3 * 1024 * 1024) return;
     setUploading(true);
-    const reader = new FileReader();
-    reader.onload = () => {
-      const avatar = reader.result;
-      localStorage.setItem("admin_avatar", avatar);
-      setProfile((current) => ({ ...current, avatar }));
+    const body = new FormData();
+    body.append("file", file);
+    try {
+      const response = await fetch("/api/admin/profile-photo", { method: "POST", body });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Upload failed.");
+      localStorage.setItem("admin_avatar", result.location);
+      setProfile((current) => ({ ...current, avatar: result.location }));
+    } catch (error) {
+      window.alert(error.message);
+    } finally {
       setUploading(false);
-    };
-    reader.readAsDataURL(file);
+      event.target.value = "";
+    }
   }
 
   return (

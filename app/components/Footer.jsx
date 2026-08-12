@@ -5,7 +5,7 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-5 lg:px-8 py-14">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
-          <h2 className="display-type text-4xl font-bold text-white">shopper<span className="text-[#e96546]">.</span></h2>
+          <h2 className="display-type text-4xl font-bold text-white">Shopper India<span className="text-[#e96546]">.</span></h2>
           <p className="mt-4 text-[#aaa095] leading-7 max-w-xs">Your one-stop destination for quality products at affordable prices. Shop smarter with Shopper.</p>
         </div>
         <div>
