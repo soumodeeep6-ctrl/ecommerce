@@ -218,3 +218,9 @@ textarea.admin-input {
 
 .scrollbar-none { scrollbar-width: none; }
 .scrollbar-none::-webkit-scrollbar { display: none; }
+
+@media (max-width: 639px) {
+  .recharts-responsive-container { min-height: 260px; }
+  .latest-products-swiper .swiper-button-prev,
+  .latest-products-swiper .swiper-button-next { display: none; }
+}

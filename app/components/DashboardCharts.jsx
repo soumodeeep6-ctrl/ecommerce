@@ -14,10 +14,10 @@ import {
 
 export default function DashboardCharts({ categoryData, priceData }) {
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mt-8">
+    <div className="grid min-w-0 grid-cols-1 xl:grid-cols-2 gap-5 sm:gap-8 mt-8">
       {/* ================= CATEGORY CHART ================= */}
 
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-xl p-8">
+      <div className="min-w-0 overflow-hidden bg-white rounded-2xl border border-gray-100 shadow-xl p-4 sm:p-8">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-bold text-gray-800">
@@ -87,7 +87,7 @@ export default function DashboardCharts({ categoryData, priceData }) {
 
       {/* ================= PRICE CHART ================= */}
 
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-xl p-8">
+      <div className="min-w-0 overflow-hidden bg-white rounded-2xl border border-gray-100 shadow-xl p-4 sm:p-8">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-bold text-gray-800">
