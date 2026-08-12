@@ -20,6 +20,13 @@ export default function LoginPage() {
     setCreated(new URLSearchParams(window.location.search).get("created") === "1");
   }, []);
 
+  useEffect(() => {
+    window.history.pushState({ loginPage: true }, "", window.location.href);
+    const handleBack = () => router.replace("/");
+    window.addEventListener("popstate", handleBack);
+    return () => window.removeEventListener("popstate", handleBack);
+  }, [router]);
+
   const update = (event) => setForm({ ...form, [event.target.name]: event.target.value });
 
   const validate = () => {

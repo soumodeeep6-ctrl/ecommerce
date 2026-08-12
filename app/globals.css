@@ -219,8 +219,21 @@ textarea.admin-input {
 .scrollbar-none { scrollbar-width: none; }
 .scrollbar-none::-webkit-scrollbar { display: none; }
 
+.admin-sidebar { height: 4rem; padding-bottom: env(safe-area-inset-bottom); }
+.admin-main { padding-bottom: 5.5rem; }
+
 @media (max-width: 639px) {
   .recharts-responsive-container { min-height: 260px; }
   .latest-products-swiper .swiper-button-prev,
   .latest-products-swiper .swiper-button-next { display: none; }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .admin-sidebar { height: 4rem; }
+  .admin-main { padding-bottom: 5.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .admin-sidebar { height: 100vh; padding-bottom: 0; }
+  .admin-main { padding-bottom: 2.5rem; }
 }
